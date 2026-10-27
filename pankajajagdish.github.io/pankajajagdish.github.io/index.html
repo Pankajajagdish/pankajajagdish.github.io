@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pankaja Kulkarni | Azure DevOps Engineer</title>
+<meta name="description" content="Azure DevOps engineer with 2 years of production experience. Case studies: problem, before, after, impact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6FA; --surface:#FFFFFF; --ink:#0E1B2E; --muted:#51627A; --line:#D6DDE8;
+  --accent:#0A5CFF; --accent-ink:#fff; --bad:#C23B22; --bad-bg:#FBEAE6; --good:#0E7A55; --good-bg:#E3F5EE;
+  --hero-bg:#0B1220; --hero-ink:#F2F6FF; --hero-muted:#9FB0CC; --hero-hot:#38E8B0;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A101C; --surface:#121C2E; --ink:#EAF0FA; --muted:#9AAAC2; --line:#26354D;
+    --accent:#6C9CFF; --accent-ink:#0A101C; --bad:#FF8C74; --bad-bg:#2B1A1A; --good:#4EE0AE; --good-bg:#10261F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A101C; --surface:#121C2E; --ink:#EAF0FA; --muted:#9AAAC2; --line:#26354D;
+  --accent:#6C9CFF; --accent-ink:#0A101C; --bad:#FF8C74; --bad-bg:#2B1A1A; --good:#4EE0AE; --good-bg:#10261F;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.55;-webkit-text-size-adjust:100%}
+a{color:var(--accent)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.025em}
+p{margin:0 0 .8rem}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace}
+
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);padding:3rem 0 2.5rem}
+.tag{display:inline-block;font-size:.85rem;color:var(--hero-hot);border:1px solid var(--hero-hot);padding:.25rem .65rem;border-radius:99px;margin-bottom:1.1rem}
+.hero h1{font-size:clamp(2.4rem,9.5vw,5rem);font-weight:800;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--hero-hot)}
+.hero p.lead{color:var(--hero-muted);font-size:1.15rem;max-width:44ch;margin:1.1rem 0 1.6rem}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-block;padding:.8rem 1.25rem;border-radius:8px;font-weight:700;text-decoration:none;min-height:44px}
+.btn.primary{background:var(--hero-hot);color:#06251B}
+.btn.ghost{border:1.5px solid #3A4A66;color:var(--hero-ink)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:2.2rem}
+.stat{background:#121C30;border:1px solid #23314B;border-radius:12px;padding:1rem}
+.stat b{display:block;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:clamp(1.5rem,6vw,2.2rem);color:var(--hero-hot);line-height:1.1}
+.stat span{color:var(--hero-muted);font-size:.92rem}
+
+/* sections */
+section{padding:3rem 0}
+h2{font-size:clamp(1.7rem,6vw,2.4rem);font-weight:800;margin-bottom:.5rem}
+.sub{color:var(--muted);max-width:56ch;margin-bottom:1.8rem}
+
+/* case studies */
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.3rem;margin-bottom:1.4rem}
+.case .num{font-size:.85rem;color:var(--accent);font-weight:700;margin-bottom:.4rem}
+.case h3{font-size:1.45rem;font-weight:800;margin-bottom:.7rem}
+.problem{color:var(--muted);margin-bottom:1rem}
+.problem b{color:var(--ink)}
+.ba{display:grid;gap:.7rem;margin-bottom:1rem}
+.ba div{border-radius:10px;padding:.85rem 1rem}
+.ba .b{background:var(--bad-bg)}
+.ba .a{background:var(--good-bg)}
+.ba h4{margin:0 0 .25rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.ba .b h4{color:var(--bad)}
+.ba .a h4{color:var(--good)}
+.ba p{margin:0}
+.impact{display:flex;gap:.8rem;align-items:center;border-top:1px dashed var(--line);padding-top:.9rem}
+.impact strong{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:1.25rem;color:var(--good);white-space:nowrap}
+.impact span{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.chips li{list-style:none;font-size:.82rem;padding:.2rem .6rem;border:1px solid var(--line);border-radius:99px;color:var(--muted)}
+.chips{padding:0;margin-bottom:0}
+
+.badge{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:.1rem .55rem;margin-left:.5rem}
+.flow{font-size:.85rem;color:var(--muted);margin:.2rem 0 1rem}
+/* stack */
+.stackgrid{display:grid;gap:.8rem}
+.stackgrid div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem}
+.stackgrid h3{font-size:1rem;margin-bottom:.3rem;color:var(--accent)}
+.stackgrid p{margin:0;color:var(--muted);font-size:.97rem}
+
+/* contact */
+.contact{background:var(--hero-bg);color:var(--hero-ink);border-radius:20px;padding:2rem 1.4rem}
+.contact p{color:var(--hero-muted);max-width:46ch}
+footer{padding:1.6rem 0 2.2rem;color:var(--muted);font-size:.92rem}
+
+@media (min-width:44rem){
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .ba{grid-template-columns:1fr 1fr}
+  .stackgrid{grid-template-columns:repeat(3,1fr)}
+  .case{padding:1.8rem}
+}
+@media (prefers-reduced-motion:no-preference){
+  .stat{animation:rise .6s ease both}
+  .stat:nth-child(2){animation-delay:.08s}.stat:nth-child(3){animation-delay:.16s}.stat:nth-child(4){animation-delay:.24s}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="tag mono">Azure DevOps Engineer | 2 years | Pune</span>
+    <h1>I turn <em>2-hour</em> outages into 5-minute fixes.</h1>
+    <p class="lead">Azure, Kubernetes, Terraform and CI/CD for production systems. Below are six problems I solved, with the before, the after, and what changed.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See the case studies</a>
+      <a class="btn ghost" href="mailto:pankajajagdishkulkarni@gmail.com?subject=Let%E2%80%99s%20talk">Hire me</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>2h → 5m</b><span>incident recovery time</span></div>
+      <div class="stat"><b>−50%</b><span>vulnerability triage time</span></div>
+      <div class="stat"><b>~15%</b><span>cloud savings found</span></div>
+      <div class="stat"><b>up to 90%</b><span>less manual effort</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="projects">
+  <h2>Case studies</h2>
+  <p class="sub">Each one follows the same path: what was wrong, how it looked before, how it looks now, and the result. Taken from production work on a telecom platform (4 AKS clusters, 8 environments).</p>
+
+  <article class="case">
+    <div class="num mono">01</div>
+    <h3>Self-healing Kubernetes pods</h3>
+    <p class="problem"><b>Problem:</b> Pods kept hitting CrashLoopBackOff and OOMKilled. Someone had to notice, log in and restart them, often outside working hours.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Engineers found failures by hand. Recovery took about 2 hours and paged the on-call person.</p></div>
+      <div class="a"><h4>After</h4><p>A Python monitor detects failed pods, recovers them, and sends a daily health report.</p></div>
+    </div>
+    <div class="impact"><strong>2h → 5m</strong><span>Recovery time, with fewer on-call escalations.</span></div>
+    <ul class="chips"><li>Python</li><li>AKS</li><li>Kubernetes</li><li>Azure Monitor</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">02</div>
+    <h3>Vulnerability triage tool</h3>
+    <p class="problem"><b>Problem:</b> Scan reports piled up and nobody could tell which findings mattered most.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Scan results were compared by hand and ranked by gut feeling.</p></div>
+      <div class="a"><h4>After</h4><p>A tool compares scans and ranks issues by NIST and CVSS scores, so the riskiest come first.</p></div>
+    </div>
+    <div class="impact"><strong>−50%</strong><span>Triage time, with a clear fix-first list.</span></div>
+    <ul class="chips"><li>Python</li><li>NIST</li><li>CVSS</li><li>Defender for Cloud</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">03</div>
+    <h3>Azure cost governance reporter</h3>
+    <p class="problem"><b>Problem:</b> The cloud bill grew and nobody could say which resources drove it.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Spend was only visible after the bill arrived, with no breakdown anyone trusted.</p></div>
+      <div class="a"><h4>After</h4><p>Automated reports show spend by resource, so waste is easy to spot and remove.</p></div>
+    </div>
+    <div class="impact"><strong>~15%</strong><span>Cloud savings the team could act on.</span></div>
+    <ul class="chips"><li>FinOps</li><li>Azure</li><li>Python</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">04</div>
+    <h3>Environments as code with Terraform</h3>
+    <p class="problem"><b>Problem:</b> Environments were built by hand, so no two matched and setup was slow and error-prone.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Manual setup in the portal. Differences between environments caused surprises at release time.</p></div>
+      <div class="a"><h4>After</h4><p>AKS, VMs, VNets, NSGs, Storage and DNS are defined in Terraform and deployed through CI/CD.</p></div>
+    </div>
+    <div class="impact"><strong>8 envs</strong><span>Across 4 AKS clusters, built the same way every time.</span></div>
+    <ul class="chips"><li>Terraform</li><li>Azure DevOps</li><li>GitLab CI/CD</li><li>Helm</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">05</div>
+    <h3>Kafka consumer lag fix</h3>
+    <p class="problem"><b>Problem:</b> Consumers fell behind and messages piled up, delaying processing downstream.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Growing lag across consumer groups, with slow message processing.</p></div>
+      <div class="a"><h4>After</h4><p>Tuned partitions and settings (max.poll.records, fetch.min.bytes, linger.ms, batch.size, compression).</p></div>
+    </div>
+    <div class="impact"><strong>Faster</strong><span>Message processing, with the backlog cleared.</span></div>
+    <ul class="chips"><li>Apache Kafka</li><li>Performance tuning</li><li>Troubleshooting</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">06</div>
+    <h3>Release diff and AKS node compliance checks</h3>
+    <p class="problem"><b>Problem:</b> Before every upgrade, the team compared releases and checked node versions by hand.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Slow, repetitive checks that were easy to get wrong.</p></div>
+      <div class="a"><h4>After</h4><p>A Git release diff analyzer and an AKS node compliance tool run the checks automatically.</p></div>
+    </div>
+    <div class="impact"><strong>up to 90%</strong><span>Less manual effort across compliance, release and cost checks.</span></div>
+    <ul class="chips"><li>Python</li><li>Git</li><li>AKS</li><li>Azure Policy</li></ul>
+  </article>
+</section>
+
+<section id="labs">
+  <h2>End-to-end Azure DevOps projects</h2>
+  <p class="sub">Hands-on lab builds that show the full path from commit to monitored production. Each is built in my own Azure subscription with no client data.</p>
+
+  <article class="case">
+    <div class="num mono">LAB A<span class="badge">Lab project</span></div>
+    <h3>Commit-to-production pipeline for AKS</h3>
+    <p class="flow mono">Git push → build → image scan → ACR → Helm deploy → approval → prod</p>
+    <p class="problem"><b>Problem:</b> A containerised app was deployed by hand: build an image, push it, run kubectl, hope nothing was missed.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Manual steps on a laptop, no record of what went live, and no safe way back.</p></div>
+      <div class="a"><h4>After</h4><p>A multi-stage Azure DevOps YAML pipeline builds, scans and deploys to dev, staging and prod with approval gates and Helm rollback.</p></div>
+    </div>
+    <div class="impact"><strong>Every release traceable</strong><span>One path to production, with a one-command rollback.</span></div>
+    <ul class="chips"><li>Azure DevOps</li><li>AKS</li><li>ACR</li><li>Helm</li><li>Trivy</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">LAB B<span class="badge">Lab project</span></div>
+    <h3>Azure landing zone with Terraform and PR checks</h3>
+    <p class="flow mono">Pull request → terraform plan → review → approve → apply</p>
+    <p class="problem"><b>Problem:</b> Cloud resources were created by clicking in the portal, so environments drifted and nobody could see who changed what.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Hand-built resources, no review step, and settings that differed between environments.</p></div>
+      <div class="a"><h4>After</h4><p>Reusable Terraform modules for VNets, NSGs, AKS and Storage, with remote state in Azure Storage and a pipeline that shows the plan on every pull request.</p></div>
+    </div>
+    <div class="impact"><strong>Infra changes by PR</strong><span>Reviewed, versioned and repeatable.</span></div>
+    <ul class="chips"><li>Terraform</li><li>Azure Storage state</li><li>Azure Policy</li><li>Azure DevOps</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">LAB C<span class="badge">Lab project</span></div>
+    <h3>Monitoring and alerting stack on AKS</h3>
+    <p class="flow mono">App metrics → Prometheus → Grafana → Azure Monitor alert → email or Teams</p>
+    <p class="problem"><b>Problem:</b> The team learned about outages from users, and nobody could see cluster health in one place.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>No dashboards, no alerts, and logs checked only after a complaint.</p></div>
+      <div class="a"><h4>After</h4><p>Prometheus and Grafana dashboards for pods, nodes and latency, plus Azure Monitor alerts for restarts, OOMKilled pods and failed deployments.</p></div>
+    </div>
+    <div class="impact"><strong>Alert before users</strong><span>Problems reach the team first.</span></div>
+    <ul class="chips"><li>Prometheus</li><li>Grafana</li><li>Azure Monitor</li><li>Log Analytics</li></ul>
+  </article>
+
+  <article class="case">
+    <div class="num mono">LAB D<span class="badge">Lab project</span></div>
+    <h3>DevSecOps pipeline with no stored secrets</h3>
+    <p class="flow mono">Code → secret scan → image scan → Key Vault → workload identity → deploy</p>
+    <p class="problem"><b>Problem:</b> Passwords sat in pipeline variables and vulnerable images reached production unnoticed.</p>
+    <div class="ba">
+      <div class="b"><h4>Before</h4><p>Long-lived credentials in pipelines, and security checks done after release, if at all.</p></div>
+      <div class="a"><h4>After</h4><p>Secrets live in Azure Key Vault, pods use workload identity, and the pipeline fails on leaked secrets or high-severity CVEs. RBAC limits who can deploy.</p></div>
+    </div>
+    <div class="impact"><strong>Security in the pipeline</strong><span>Risky builds stop before they ship.</span></div>
+    <ul class="chips"><li>Key Vault</li><li>Entra ID</li><li>RBAC</li><li>Trivy</li><li>Defender for Cloud</li></ul>
+  </article>
+</section>
+
+<section id="stack">
+  <h2>Toolbox</h2>
+  <p class="sub">Microsoft Certified: Azure Administrator Associate (AZ-104).</p>
+  <div class="stackgrid">
+    <div><h3>Cloud and IaC</h3><p>Azure, AKS, VNets, NSGs, Storage, DNS, Terraform</p></div>
+    <div><h3>CI/CD</h3><p>Azure DevOps, GitLab CI/CD, GitHub Actions, Docker, Helm, Git</p></div>
+    <div><h3>Observability</h3><p>Prometheus, Grafana, Azure Monitor, Log Analytics, Application Insights</p></div>
+    <div><h3>Security</h3><p>Azure Policy, Defender for Cloud, Entra ID, RBAC, NIST, CVSS</p></div>
+    <div><h3>Messaging</h3><p>Apache Kafka, consumer groups, partitions, tuning</p></div>
+    <div><h3>Scripting and AI</h3><p>Python, YAML, GitHub Copilot, Cursor IDE, MCP</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>Got a problem like these?</h2>
+    <p>Send me two lines about your setup. I’ll tell you honestly if I can help.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:pankajajagdishkulkarni@gmail.com?subject=Let%E2%80%99s%20talk">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/pankaja-jagdish-kulkarni" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/Pankajajagdish" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">Pankaja Jagdish Kulkarni, Pune, India.</div></footer>
+</body>
+</html>
